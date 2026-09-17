@@ -1,0 +1,15 @@
+samplesheet: "config/samples.tsv"
+
+# Databases
+krakenuniq_db: /nobackup/kvgm94/ADNAcomm/aMeta-resources/krakenUniqMicrobialNCBINT
+pathogenomesFound: /nobackup/kvgm94/ADNAcomm/aMeta-resources/bowtie2/pathogensFound.very_inclusive.tab
+bowtie2_seqid2taxid_db: /nobackup/kvgm94/ADNAcomm/aMeta-resources/bowtie2/seqid2taxid.pathogen.map
+bowtie2_db: /nobackup/kvgm94/ADNAcomm/aMeta-resources/bowtie2/library.pathogen.fna
+malt_seqid2taxid_db: /nobackup/kvgm94/ADNAcomm/aMeta-resources/malt/seqid2taxid.map.orig
+malt_nt_fasta: /nobackup/kvgm94/ADNAcomm/aMeta-resources/malt/library.fna
+malt_accession2taxid: /nobackup/kvgm94/ADNAcomm/aMeta-resources/malt/nucl_gb.accession2taxid
+ncbi_db: resources/ncbi
+
+# Breadth and depth of coverage filters
+n_unique_kmers: 750
+n_tax_reads: 50
