@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH -c 20                      # number of cores
+#SBATCH -p bigmem
+#SBATCH --mem=700G
+#SBATCH --gres=tmp:100G
+#SBATCH -t 3-00:00                 # wall time (D-HH:MM)
+#SBATCH -o slurm.%j.out            # STDOUT (%j = JobId)
+#SBATCH -e slurm.%j.err            # STDERR (%j = JobId)
+
+unset OMP_PLACES
+unset OMP_PROC_BIND
+
+source activate aMeta
+
+# Run snakemake with the number of cores SLURM provided
+snakemake --snakefile workflow/Snakefile --use-conda --conda-frontend conda --cores $SLURM_CPUS_PER_TASK --verbose --printshellcmds --rerun-incomplete
